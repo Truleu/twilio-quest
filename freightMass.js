@@ -1,28 +1,21 @@
-function calculateMass(arr){
-    
-    function sum(acc, elem){
-        return acc + elem;
-    };
-    let answer = arr.reduce(sum, elem);
-    console.log(answer);
-    return;
-};
+// function calculateMass(arr){
+//     let total = 0;
+//     let reducer = (sum, current) => sum + current;
+//     let result = arr.reduce(reducer, 0);
+//     total = result.length - 1;
+//     return total;
+// };
 
-calculateMass(['lopes', 'cacilda', 'tuia', 'barbosa', 'jurema'])
+/* 
+    Above is my attempt to solve this one. I mean, I did solve it but the game thinks otherwise. It says I didn't return a number (?). Might be a glitch, might be it's considering the arrow function used in reduce instead of the global function. I'm probably coming back to this one and try to shove it all in one single return line.
 
-//console.log(calculateMass(['lopes', 'cacilda', 'tuia', 'barbosa', 'jurema']));
+    Below is the solution I found from github account cinexin, committed by user catsdontfly
+*/
 
-// let arra = ['lopes', 'cacilda', 'tuia', 'barbosa', 'jurema'];
+function calculateMass(freights) {
+	return freights.map(freight => freight.length).reduce((sum, current) => sum + current, 0);
+}
 
-// function sum(acc, varr){
-//     return acc + varr;
-// }
-// let answer = arra.reduce(sum).length;
-// console.log(answer);
-
-// let i = 0;
-// for 
-
-// let soma = arra.reduce(function (allN, nam){
-//     for ()
-// })
+// const mass = calculateMass(['dog', 'donkey', 'cat']);
+// console.log('Total mass of items is ' + mass); // should be 12
+// console.log(typeof(mass));
